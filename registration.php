@@ -1,4 +1,6 @@
-<form action="action_page.php">
+<?php include('server.php') ?>
+
+<form method="post" action="registration.php">
     <div class="container">
         <h1>Enregistrement</h1>
         <p>Veuillez remplir ce formulaire pour vous inscrire</p>
@@ -32,7 +34,7 @@
         <hr>
 
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        <button type="submit" class="registerbtn">Register</button>
+        <button type="submit" class="registerbtn" name="reg_user">Register</button>
     </div>
 
     <div class="container signin">
