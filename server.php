@@ -41,7 +41,7 @@ if (isset($_POST['reg_user'])) {
 
 
     if (count($errors) === 0){
-        $passwd =md5($passwd);
+        $passwd =password_hash($passwd,12);
 
         $query = "INSERT INTO users (prenom, nom, phone ,address, age, mail, passwd) VALUES ('$firstName', '$name', '$phone', '$address', '$age', '$mail', '$passwd')";
         mysqli_query($db, $query);
@@ -70,7 +70,7 @@ if (isset($_POST['login_user'])){
     }
 
     if(count($errors) == 0) {
-        $passwd = md5($passwd);
+        $passwd = password_hash($passwd, 12);
         $query = "SELECT * FROM users WHERE mail='$mail' AND passwd='$passwd'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results)==1){
